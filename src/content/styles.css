@@ -1,0 +1,295 @@
+:root {
+  --dfg-bg: rgba(20, 24, 28, 0.92);
+  --dfg-fg: #f5f7fa;
+  --dfg-muted: rgba(245, 247, 250, 0.75);
+  --dfg-green: #1fba6a;
+  --dfg-amber: #f4b400;
+  --dfg-red: #e53935;
+  --dfg-border: rgba(255, 255, 255, 0.14);
+  --dfg-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --dfg-font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+#dfg-root,
+#dfg-root * {
+  font-family: var(--dfg-font);
+  box-sizing: border-box;
+}
+
+#dfg-pill {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 2147483646;
+  border: 1px solid var(--dfg-border);
+  background: var(--dfg-bg);
+  color: var(--dfg-fg);
+  padding: 8px 10px;
+  border-radius: 999px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  box-shadow: var(--dfg-shadow);
+  cursor: pointer;
+  user-select: none;
+}
+
+#dfg-pill .dfg-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+#dfg-pill .dfg-title {
+  font-weight: 650;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+
+#dfg-pill .dfg-sub {
+  font-size: 11px;
+  color: var(--dfg-muted);
+}
+
+#dfg-panel {
+  position: fixed;
+  top: 58px;
+  right: 14px;
+  width: 340px;
+  max-height: min(70vh, 620px);
+  z-index: 2147483646;
+  border: 1px solid var(--dfg-border);
+  background: var(--dfg-bg);
+  color: var(--dfg-fg);
+  border-radius: 14px;
+  box-shadow: var(--dfg-shadow);
+  overflow: hidden;
+  display: none;
+}
+
+#dfg-panel.dfg-open {
+  display: block;
+}
+
+#dfg-panel header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 10px;
+  border-bottom: 1px solid var(--dfg-border);
+}
+
+#dfg-panel header .dfg-h {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+#dfg-panel header .dfg-h h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#dfg-panel header .dfg-h span {
+  font-size: 11px;
+  color: var(--dfg-muted);
+}
+
+#dfg-panel header button {
+  background: transparent;
+  border: 1px solid var(--dfg-border);
+  color: var(--dfg-fg);
+  border-radius: 10px;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+#dfg-panel .dfg-body {
+  padding: 12px;
+  overflow: auto;
+  max-height: calc(min(70vh, 620px) - 56px);
+}
+
+.dfg-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dfg-row:last-child {
+  border-bottom: none;
+}
+
+.dfg-row .dfg-k {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dfg-row .dfg-v {
+  font-size: 12px;
+  color: var(--dfg-muted);
+}
+
+.dfg-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dfg-actions button {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--dfg-fg);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.dfg-actions button.dfg-primary {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dfg-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dfg-toggle input {
+  width: 16px;
+  height: 16px;
+}
+
+#dfg-mini-bar {
+  position: fixed;
+  top: 58px;
+  right: 370px;
+  z-index: 2147483646;
+  border: 1px solid var(--dfg-border);
+  background: rgba(20, 24, 28, 0.88);
+  color: var(--dfg-fg);
+  padding: 10px 10px;
+  border-radius: 14px;
+  box-shadow: var(--dfg-shadow);
+  display: none;
+  min-width: 280px;
+}
+
+#dfg-mini-bar.dfg-show {
+  display: block;
+}
+
+#dfg-mini-bar .dfg-mini-title {
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+#dfg-mini-bar .dfg-mini-sub {
+  font-size: 11px;
+  color: var(--dfg-muted);
+  margin: 0 0 10px 0;
+}
+
+#dfg-toast {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 2147483646;
+  border: 1px solid var(--dfg-border);
+  background: var(--dfg-bg);
+  color: var(--dfg-fg);
+  padding: 10px 12px;
+  border-radius: 12px;
+  box-shadow: var(--dfg-shadow);
+  display: none;
+  max-width: 360px;
+  font-size: 12px;
+}
+
+#dfg-toast.dfg-show {
+  display: block;
+}
+
+#dfg-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  background: rgba(0, 0, 0, 0.35);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#dfg-modal.dfg-show {
+  display: flex;
+}
+
+#dfg-modal .dfg-modal-card {
+  width: min(420px, 92vw);
+  border: 1px solid var(--dfg-border);
+  background: var(--dfg-bg);
+  color: var(--dfg-fg);
+  border-radius: 14px;
+  box-shadow: var(--dfg-shadow);
+  padding: 14px;
+}
+
+#dfg-modal h4 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+#dfg-modal p {
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: var(--dfg-muted);
+  line-height: 1.35;
+}
+
+/* Gmail interventions */
+html.dfg-amber [aria-label*="Forward" i],
+html.dfg-amber [aria-label^="Forward" i] {
+  display: none !important;
+}
+
+html.dfg-red [aria-label*="Forward" i],
+html.dfg-red [aria-label^="Forward" i],
+html.dfg-red [aria-label*="Add to tasks" i],
+html.dfg-red [aria-label*="Print" i] {
+  display: none !important;
+}
+
+html.dfg-red [aria-label*="More" i][role="button"] {
+  opacity: 0.25 !important;
+  pointer-events: none !important;
+}
+
+html.dfg-red [role="tab"][aria-label="Social"],
+html.dfg-red [role="tab"][aria-label="Promotions"],
+html.dfg-red [role="tab"][aria-label="Updates"],
+html.dfg-red [role="tab"][aria-label="Forums"] {
+  opacity: 0.45 !important;
+  filter: grayscale(0.4);
+}
+
+.dfg-cat-badge {
+  margin-left: 8px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-size: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.06);
+}
+

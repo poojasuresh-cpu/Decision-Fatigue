@@ -1,0 +1,26 @@
+{
+  "name": "decision-fatigue-guard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint:typecheck": "tsc -p tsconfig.json --noEmit",
+    "postinstall": "node scripts/gen-icons.mjs"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-backend-cpu": "^4.22.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.270",
+    "@types/node": "^22.13.1",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.12",
+    "vitest": "^2.1.9"
+  }
+}
+
